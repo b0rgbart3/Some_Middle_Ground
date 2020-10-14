@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <title>Middle|Ground</title>
+    <!-- <script src="js/wordcloud.js"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/piechart.css">
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script type="text/javascript" src="./assets/js/wordcloud2.js"></script>
+    <script>
+        // const blueCloudData = require('blueCloudData.json');
+        $(document).ready(function () {
+            // let blueCloudData = fs.readFileSync('blueCloudData.json');
+            // let blueCloud = JSON.parse(blueCloudData);
+            // let redCloudData = fs.readFileSync('redCloudData.json');
+            // let redCloud = JSON.parse(redCloudData);
+
+            console.log("Starting the script.");
+
+            $.ajax("/api/word-cloud-data", {
+                type: "GET"
+            }).then(function (data) {
+
+                console.log("Got the data back from the api");
+
+                console.log(data);
+
+                WordCloud(document.getElementById('blue_canvas'), { list:[['mask', 60], ['virus', 4], ['vaccine', 20], ['trump', 12], ['sick', 6], ['cure', 25], ['Fauci', 40]] } );
+                WordCloud(document.getElementById('red_canvas'), { list:[['freedom', 60], ['hoax', 4], ['infections', 20], ['trump', 12], ['recovered', 6], ['cure', 25], ['Fauci', 40]] } );
+
+                // WordCloud(document.getElementById('blue_canvas'), { blueCloud } );
+                // WordCloud(document.getElementById('blue_canvas'), { redCloud } );
+            }
+
+            );
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class='jumbo'>
+
+        <a href='/'><img src="assets/images/logo.png" class="logo"></a>
+        <p class='tagline'>Insights on the news you receive and issues you care about.</p>
+    </div>
+
+    <h3 id="blue_stream_head">Blue Stream</h3>
+    <canvas id="blue_canvas" class="wordCloud"></canvas>
+
+    <h3 id="red_stream_head">Red Stream</h3>
+    <canvas id="red_canvas" class="wordCloud"></canvas>
+
+</body>
+<footer>
+    Image by Moshe Harosh from <a
+        href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3113668"
+        class="subtleLink">Pixabay</a>
+</footer>
+
+</html>

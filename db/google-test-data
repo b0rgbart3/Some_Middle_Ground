@@ -1,0 +1,30 @@
+ // npm install googleapis (!! don't forget the 's' at the end !!)
+ // redirect into routes folder 
+ // run " node google-api.js " 
+ 
+ // theres more info in the claimreview (see updated google-api file), but it passes as an array
+ 
+ {
+      text: '“We have just about the lowest mortality rate" for coronavirus.',
+      claimant: 'Donald J. Trump',
+      claimDate: '2020-07-14T00:00:00Z',
+      claimReview: [Array]
+    },
+    {
+      text: 'Biden and Democrats are "going to rip down the wall. It was hard to get that built. And now it’s almost completed, it will be completed by a little after the end of the year.”',
+      claimant: 'Donald J. Trump',
+      claimDate: '2020-07-14T00:00:00Z',
+      claimReview: [Array]
+    },
+    {
+      text: '"More white people" are killed by police thank black people.',
+      claimant: 'Donald J. Trump',
+      claimDate: '2020-07-14T00:00:00Z',
+      claimReview: [Array]
+    },
+    {
+      text: 'The Obama administration "got very poor marks from Gallup on the job they did on swine flu. And they stopped very early on, testing."',
+      claimant: 'Donald J. Trump',
+      claimDate: '2020-07-14T00:00:00Z',
+      claimReview: [Array]
+    },

@@ -1,0 +1,44 @@
+.outletStats {
+  background-color:black;
+  color:white;
+  text-align: center;
+  height:50px;
+  margin:10px;
+}
+
+.outletStats a {
+
+  color:white;
+  background-color:teal;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:1.2em;
+  padding:8px;
+  border-radius:8px;
+  text-decoration: none;
+}
+
+#blue_canvas {
+  width:50%;
+  box-sizing: border-box;
+  float:left;
+  height:300px;
+  border:4px solid blue;
+}
+
+#red_canvas{
+  width:50%;
+  box-sizing:border-box;
+  height:300px;
+  border:4px solid red;
+}
+
+.wordCloud {
+  width:50%;
+  box-sizing: border-box;
+  float:left;
+  height:600px;
+}
+
+canvas {
+  background-color:Black;
+}

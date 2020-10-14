@@ -1,0 +1,61 @@
+<div class='analysis'>
+
+<div class='jumbo'>
+    <a id="aboutLink" href="about.html">About the Project</a>
+  <img src="assets/images/logo.png" class="logo">
+<p class='tagline'>Insights on the news you receive and issues you care about.</p>
+</div>
+
+  <div>
+    <h1 class="topicHead">Topic:
+      <span class="topic">{{ keyword }}</span></h1>
+  </div>
+
+  {{!-- fact check here --}}
+  <div class="list-container factCheck group googleBox">
+    <p class="factCheckHead">Google Fact Check Results</p>
+
+       {{#each googleInfos}}
+          {{#if title}}
+            <div class='factCheckBox'>
+         
+              <p><strong>Claim:</strong>
+               {{title}}</p>
+
+              <p><strong>Rated by: &nbsp;</strong><a href='{{publisher.site}}'>{{publisher.name}}</a></p>
+
+              <p> <strong>Rating:</strong>
+                <span class="">{{textualRating}}</span></p>
+            </div>
+             {{/if}}
+        {{/each}}
+
+
+
+  </div>
+</div>
+
+
+<div class="outletStats">
+
+  <a href="/stats" id="wordCloudLink">View Word Clouds</a>
+
+
+
+</div>
+<div class='feedContainer group'>
+  <div class='feed blueFeed group'>
+    <div class='stats'>"Liberal" sources: <span class='countNumber'>{{ blueCount }}</span> posts</div>
+   
+    {{#each blues}}
+      {{> cards/card-block}}
+    {{/each}}
+  </div>
+
+  <div class='feed redFeed group'>
+       <div class='stats'>"Conservative" sources: <span class='countNumber'>{{ redCount }}</span> posts</div>
+    {{#each reds}}
+      {{> cards/card-block}}
+    {{/each}}
+  </div>
+</div>

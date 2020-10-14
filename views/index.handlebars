@@ -1,0 +1,39 @@
+<div class='jumbo'>
+  <a id="aboutLink" href="about.html">About the Project</a>
+  <img src="assets/images/logo.png" class="logo">
+<p class='tagline'>Insights on the news you receive and issues you care about.</p>
+</div>
+
+{{!-- <div class='div1'>
+<form class="account-form">
+<h2>Enter Your Twitter Handle</h2>
+  <div class="form-group">
+    <input type="text" id="feed_name" name="feed_name" class="basicInput"><br>
+    <button type="submit" id='submitAccountName' class='submitBtn accountNameSubmit'>Analyze</button>
+  </div>
+  </form>
+</div> --}}
+<div class='div2'>
+    <form class="topic-form">
+      <h2>Enter a topic to search on</h2>
+        <div class="form-group">
+          <input type="text" id="keyword" name="keyword" class="basicInput" placeholder="search"><br>
+          <button type="submit" id="submitKeyword" class='submitBtn keywordSubmit'>Analyze</button>
+        </div>
+  </form>
+  <br>
+  {{!-- <div class='div3'>
+  <button type="submit" id="submitAll" class='submitBtn keywordSubmit'>View all recent topics</button>
+</div> --}}
+
+{{ recentTopics }}
+</div>
+
+
+
+
+{{!-- <fb:login-button id="fb_login"
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button> --}}
+

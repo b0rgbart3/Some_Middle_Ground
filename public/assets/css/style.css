@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+a {
+    color: goldenrod;
+}
+
+html {
+    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:white;
+}
+
+body {
+    width:100%;
+    box-sizing: border-box;
+    margin:auto;
+    background-color: white;
+    height:100vh;
+    position: relative;
+}
+
+
+.aboutHead, .aboutSubhead, .aboutParagraph {
+    display: block;
+    left: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.aboutParagraph {
+    text-align: justify;
+    text-justify: distribute;
+}
+
+.aboutSubhead {
+    font-size: 1.35em;
+    font-weight: bold;
+    font-style: italic;
+    margin: 1% 10%;
+    color: rgb(216, 163, 27);
+}
+
+
+#blue_canvas {
+    display: inline-block;
+    float: left;
+    width: 30%;
+    margin-top: 50px;
+    margin-left: 10%;
+    position: relative;
+}
+
+#blue_stream_head {
+    display: inline-block;
+    background-color: blue;
+    box-sizing: border-box;
+    padding: 5px;
+    color: white;
+    left: 10%;
+    position: fixed;
+}
+
+#red_canvas {
+    display: inline-block;
+    float: right;
+    margin-top: 50px;
+    margin-right: 15%;
+    width: 30%;
+    position: relative;
+}
+
+#red_stream_head {
+    display: inline-block;
+    background-color: red;
+    box-sizing: border-box;
+    padding: 5px;
+    color: white;
+    margin-right: 100px;
+    position: fixed;
+    left: 60%;
+}
+>>>>>>> bartsBranch
+
+ul.builtWithUL {
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 10%;
+    display: inline-block;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+li.builtWithLI {
+    margin-left: 30%;
+    margin-right: 30%;
+    list-style: none;
+    display: inline-block;
+    text-align: left;
+}
+
+#aboutProject {
+    padding-bottom: 20px;
+}
+
+#acknowledgements {
+    padding: .7em;
+    height: 30%;
+    background-color: rgba(189, 149, 46, 0.3);
+}
+
+#builtWith {
+    padding: .7em;
+    height: 30%;
+    background-color: rgba(218, 165, 32, .3);
+}
+
+#columns {
+    margin-left: 10%;
+    margin-right: 10%;
+    column-count: 3;
+    break-inside: auto;
+}
+
+#aboutLink {
+    position: fixed;
+    right: 5%;
+    top: 3%;
+    color: rgba(255, 255, 255, .7);
+}
+
+ul.acksUL {
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 10%;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding: 0;
+}
+
+li.acksLI {
+    margin-left: 30%;
+}
+
+.meetTeamDiv {
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: fit-content;
+}
+
+.teamCard {
+    background-color:white;
+    padding:0px;
+    min-width:15%;
+    max-width:20%;
+    height: 100%;
+    margin:0px;
+    display:inline-block;
+    border-radius:3px;
+    vertical-align: top;
+    border:black;
+    border-width: .5em;
+    box-shadow: rgb(57, 57, 57);
+    margin-bottom:24px;
+    margin-top:5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.teamMemName {
+    margin-left: 5%;
+    margin-right: auto;
+}
+
+.teamCardImageDiv {
+    width:100%;
+    box-sizing: border-box;
+    background-color:white;
+    text-align: center;
+    margin: auto;
+}
+.teamCardImage {
+    width: 80%;
+    background-color: white;
+    align-items: center;
+    border-radius: 50%;
+    size: contain;
+    text-align: center;
+    position: relative;
+}
+
+.teamCardTextDiv {
+    height:250px;
+    overflow: hidden;
+}
+.teamCardText {
+    text-align: left;
+    padding:10px;
+    font-size:.8em;
+}
+
+.teamCardFooter {
+    font-size: .8em;
+    padding-top: .8em;
+    height: 5%;
+}
+
+.teamCardIcon {
+    width: 15%;
+    size: contain;
+    diplay: inline-block;
+    float: left;
+}
+
+
+h1 {
+    font-size: 2em;
+    display: block;
+}
+
+h2 {
+    margin:0;
+    font-size: .8em;
+    font-style: italic;
+    color: grey;
+}
+
+.logo {
+    width:350px;
+}
+
+.tagline {
+    font-style:italic;
+    margin:0;
+    padding-bottom: 3%;
+}
+
+form {
+    margin:0;
+}
+/* Styles for Mobile */
+/*  Mobile -first design! */
+
+.jumbo {
+    text-align:center;
+    width:100%;
+    box-sizing: border-box;
+    color: whitesmoke;
+    padding-top:100px;
+    background-color:#eeeeee;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/handshake.jpg");
+    background-size: 100%;
+    background-position: 50% 50%;
+    box-sizing: border-box;
+}
+
+.jumbo h1 {
+    margin:0;
+}
+.div1 {
+    text-align:center;
+    background-color:#eeeeee;
+    margin:0;
+    padding-bottom:20px;
+}
+
+.div2 {
+    padding-top:20px;
+    text-align:center;
+    background-color:white;
+    margin:0;
+    height:400px;
+}
+
+.basicInput {
+    font-size:1.2em;
+    border-radius:4px;
+    border-color: rgb(97, 97, 97);
+    background-image: url(../images/searchicon.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding:12px;
+    padding-left: 40px;
+    color: rgb(57, 57, 57);
+    outline:none;
+    margin-top:18px;
+}
+.basicInput:hover {
+    outline:2px solid rgb(104, 167, 250);
+    background-color: lightgray;
+    background-image: none;
+}
+.basicInput:active {
+    outline:2px solid rgb(104, 167, 250);
+    background-image: none;
+}
+
+footer {
+    width: 100%;
+    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 12px;
+    color: rgba(255, 255, 255, .5);
+    background: rgba(32, 32, 32, 0.979);
+    padding: 15px;
+    box-sizing: border-box;
+    border-top-style: solid;
+    position: fixed;
+    bottom: 0px;
+}
+
+.submitBtn {
+    border-radius:8px;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:8px;
+    padding-bottom:8px;
+    font-size:.9em;
+    font-weight: 600;
+    color:white;
+    text-transform: uppercase;
+    border:none;
+    box-shadow:0 0 4px rgba(0,0,0,.4);
+    margin-top:18px;
+    outline:none;
+    cursor: pointer;
+    user-select: none;
+}
+.submitBtn:hover {
+    outline:none;
+}
+.submitBtn:active {
+    background-color:rgb(62, 153, 238);
+    outline:none;
+}
+
+.subtleLink {
+    color: rgba(255, 255, 255, .5);
+    text-decoration: none;
+}
+
+.topic {
+    background-color: whitesmoke;
+    font-size: .8em;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.accountNameSubmit {
+    background-color:rgb(62, 118, 238);
+}
+
+.accountNameSubmit:hover {
+    background-color:rgb(62, 153, 238);
+}
+.accountNameSubmit:active {
+    background-color:rgb(62, 153, 238);
+}
+.keywordSubmit {
+    background-color:rgb(130, 130, 130);
+}
+.keywordSubmit:hover {
+    background-color:rgb(89, 89, 89);
+}
+.keywordSubmit:active {
+    background-color:rgb(130, 130, 130);
+}
+
+.analysis {
+    text-align:center;
+    background-color: black;
+
+}
+.analysis .logo {
+    width:400px;
+}
+/* Styles for Larger screens */
+@media only screen and (min-width:700px) {
+
+    .logo {
+        width: 450px;
+    }
+
+
+}
+

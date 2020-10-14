@@ -1,0 +1,230 @@
+
+.googleBox {
+    overflow: hidden;
+    padding:0;
+    text-align: center;
+}
+
+.card {
+    background-color:rgba(255, 255, 255, .5);
+    padding:0px;
+    width:90%;
+    margin:0px;
+    display:inline-block;
+    border-radius:3px;
+    vertical-align: top;
+    border:none;
+    margin-bottom:24px;
+    margin-top:20px;
+}
+
+.cardImageDiv {
+    width:100%;
+    box-sizing: border-box;
+    background-color:black;
+}
+.cardImage {
+    width:100%;
+
+}
+
+.stats {
+    color:white;
+    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 5px;
+    font-size:1.35em;
+}
+
+#wordCloudLink {
+    color:rgba(255, 255, 255, .8);
+    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size:1.35em;
+}
+
+.countNumber {
+   
+
+}
+
+.googleTitle {
+    text-align: center;
+    color:white;
+}
+
+.factCheckBox {
+    background-color:rgba(255, 255, 255, .5);
+    width:200px;
+    display:inline-block;
+    margin:4px;
+    color:black;
+    border-radius:4px;
+    box-shadow:0 0 20px rgb(133, 133, 133);
+    vertical-align: top;
+    text-align: left;
+    font-size:.8em;
+    padding-left:8px;
+    box-sizing: border-box;
+}
+
+/* This is the news source logo such as CNN or FoxNews */
+.userImage {
+    width:60px;
+    height:60px;
+    float:left;
+    display:inline-block;
+}
+.source {
+    height:60px;
+    background-color:#dddddd;
+    float:left;
+    text-transform: capitalize;
+    font-weight: bold;
+    display:inline-block;
+    vertical-align: top;
+    width:100%;
+    box-sizing: border-box;
+}
+.source p {
+    text-align: left;
+    padding-left:80px;
+}
+.cardTextDiv {
+    height:150px;
+    overflow: hidden;
+}
+.cardText {
+    text-align: left;
+    padding:10px;
+    font-size:.8em;
+}
+.feedContainer
+{
+    background-color:blue;
+}
+.feed {
+    box-sizing: border-box;
+    width:100%;
+    float:none;
+    display:block;
+    margin:0;
+    text-align: center;
+    position: relative;
+    height:100%;
+}
+
+.blueFeed {
+    background-color:blue;
+
+}
+
+.redFeed {
+    background-color:rgb(210, 0, 0);
+}
+
+.blueFeed .card {
+    box-shadow:0 0 20px rgb(76, 180, 228);
+}
+.redFeed .card {
+    box-shadow:0 0 20px rgb(228, 76, 76);
+}
+
+.factCheck {
+    background-color: #d6d6cf;
+    padding-top: 5px;
+    color: rgb(93, 93, 91);
+    padding-bottom: 5px;
+}
+
+.factCheckHead {
+    font-size: 1.35em;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin:0;
+    color: rgba(255, 255, 255, 1);
+}
+
+ul.factCheckList {
+    list-style-type: none;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+ul.factCheckList li {
+    display: inline-block;
+}
+.factCheckLabel {
+    font-weight: bold;
+    background-color: transparent;
+    padding-left: 15px;
+    padding-right: 3px;
+}
+
+.factCheckItem {
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgb(255, 255, 255, .75);
+    color: rgb(144, 141, 141);
+}
+
+.errorMsg {
+    background-color:red;
+    color:white;
+    font-size:.9em;
+    font-weight: bold;
+    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding:8px;
+    display:none;
+}
+
+.topic {
+    display: inline;
+    font-weight: bold;
+    font-size: .9em;
+    color: white;
+    background-color: rgba(255, 255, 255, .25);
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.topicHead {
+    color: rgba(255, 255, 255, .5);
+}
+
+ul {
+    text-align: center;
+}
+
+s
+
+/* Styles for Larger screens */
+@media only screen and (min-width:800px) {
+
+    .feed {
+        box-sizing: border-box;
+        width:50%;
+        float:left;
+        display:inline-block;
+    }
+
+
+}
+
+@media only screen and (min-width:1000px) {
+    .card {
+        width:45%;
+        margin-left:2%;
+        margin-right:2%;
+    }
+}
+
+
+@media only screen and (min-width:1600px) {
+    .card {
+        width:28%;
+
+    }
+}
