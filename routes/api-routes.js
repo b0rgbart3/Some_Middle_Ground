@@ -96,7 +96,7 @@ module.exports = function(app) {
          // Create a new Curator Stream Object
          var stream = new Stream();
          var blueFeed, redFeed;
-         var NYTimesFeed;
+         var NYTimesFeed, NEWSOrgFeed;
 
          
  
@@ -124,7 +124,40 @@ module.exports = function(app) {
 
         // Create a new Curator Stream Object
         var stream = new Stream(keyword);
-        var blueFeed, redFeed;
+        var blueFeed, redFeed, NEWSOrgFeed;
+
+        stream.getNEWSorgFeed( async function(newsdotorgdata) {
+          console.log('got newsorg feed.');
+          if (newsdotorgdata) {
+            if (newsdotorgdata.data) {
+              if (newsdotorgdata.data.articles) {
+                NEWSOrgFeed = newsdotorgdata.data.articles;
+
+               // console.log('NewsORgFeed: ', NEWSOrgFeed);
+              }
+            }
+          }
+
+              NEWSOrgFeed.forEach( (article) => {
+                console.log('NEWS Org Article:');
+                let imageURL = "";
+                if (article.urlToImage) {
+                  imageURL = article.urlToImage;
+                }
+                let source = '';
+                if (article.source.name) {
+                  source = article.source.name;
+                }
+                let newPost = {
+                  keyword: keyword,
+                  bias: '',
+                  text: article.description,
+                  url: article.url,
+                  network_name: source,
+                }
+                db.Post.create(newPost);
+              });
+        })
 
        stream.getNYTimesFeed( async function(nytimesdata) {
          if (nytimesdata){
@@ -132,6 +165,7 @@ module.exports = function(app) {
              if (nytimesdata.data.response) {
                if (nytimesdata.data.response.docs) {
                 NYTimesFeed = nytimesdata.data.response.docs;
+                
                }
               
              }

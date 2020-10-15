@@ -8,6 +8,7 @@ module.exports = function(sequelize, DataTypes) {
           primaryKey: true,
           autoIncrement: true},
       curator_id: DataTypes.INTEGER,
+      title: DataTypes.STRING,
       keyword: DataTypes.STRING,
       bias: DataTypes.STRING,
       text: DataTypes.TEXT,
