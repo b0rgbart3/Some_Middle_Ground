@@ -1,11 +1,17 @@
 const axios = require('axios');
 
 const API_Key = "7bdbfc4d-3586-4acc-a841-a018eb4c8cd9";
+const NYTIMES_API_KEY = process.env.NY_TIMES_API_KEY;
+
+
 const endptURL = "https://api.curator.io/v1/feeds/";
+
+const NYTimes_endpt = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=";
 const redFeedId = "f66cbd53-a9d3-40fa-a337-0b493f3e4838";
 const blueFeedId = "8c5db542-fedc-4155-8125-2eda82220a84";
 const midFeedId = "adb4124d-4e2b-4987-9424-e6326aab75be";
 const blueFeed = [];
+const blueFeed1 =[];
 const redFeed = [];
 var queryString;
 
@@ -15,7 +21,11 @@ var queryString;
 
 class Stream {
 
+    
+
     constructor(keyword) {
+
+        console.log("Creating stream for: ", keyword);
         if (keyword) {
         this.keyword = keyword.toLowerCase(); }
         else {
@@ -29,7 +39,10 @@ class Stream {
         this.redFeed = this.getCuratorFeed(redFeedId, cb);
     }
     getBlueFeed(cb) {
-        this.blueFeed = this.getCuratorFeed(blueFeedId, cb);
+       // this.blueFeed = this.getCuratorFeed(blueFeedId, cb);
+
+       // callback function comes from the API 
+        this.blueFeed1 = this.getNYTimesFeed(cb);
     }
  
 
@@ -58,6 +71,17 @@ class Stream {
 
     }
 
+    getNYTimesFeed( cb ) {
+        
+        let queryString = NYTimes_endpt + this.keyword + "&api-key=" + NYTIMES_API_KEY;
+        console.log("About to get the NY Times feed, ", queryString);
+        axios.get(queryString)
+            .then( response => {
+             //  console.log( "Got a response back from the NYTIMES ");
+               cb(response);
+            })
+    }
+
     getCuratorFeed (FeedId, cb) {
         let queryString = endptURL + FeedId + "/posts?api_key=" + API_Key+"";
         axios.get(queryString)
@@ -71,10 +95,10 @@ class Stream {
                     break;
     
                 case blueFeedId: 
-                    var blueFeed = response.data;
-                    blueFeed = this.keywordFilter(blueFeed);
-                    this.blueFeed = blueFeed;
-                    cb( blueFeed );
+                    // var blueFeed = response.data;
+                    // blueFeed = this.keywordFilter(blueFeed);
+                    // this.blueFeed = blueFeed;
+                    // cb( blueFeed );
                     break;
     
                 default: console.log('No Feed ID Given');

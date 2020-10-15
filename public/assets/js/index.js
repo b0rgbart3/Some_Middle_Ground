@@ -25,6 +25,7 @@ $(document).ready(function() {
 function AnalyzeKeyword(keyword) {
 
     if (keyword) {
+        console.log("In AnalyzeKeyword:", keyword);
     $.ajax({
         method: "POST",
         url: "/api/analyze_keyword",

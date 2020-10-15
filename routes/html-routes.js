@@ -95,6 +95,8 @@ module.exports = function(app) {
       res.sendFile(path.join(__dirname, "/../public/data-vis.html"));
     });
 
+
+    // This is the ROOT ROUTE -- which loads the handlebars template: views/index.handlebars
     app.get("/*", function(req, res) {
 
         res.render("index");

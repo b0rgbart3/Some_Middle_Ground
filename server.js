@@ -21,6 +21,8 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // static directory 
+// Note:  This is necessary to be able to load in CSS and JS files into
+// the handlebars templates
 app.use(express.static("public"));
 
 

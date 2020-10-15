@@ -96,21 +96,24 @@ module.exports = function(app) {
          // Create a new Curator Stream Object
          var stream = new Stream();
          var blueFeed, redFeed;
+         var NYTimesFeed;
+
+         
  
                 // Get the Blue Feed from the stream
-                stream.getBlueFeed( async function(bluedata) {
-                  blueFeed = bluedata;
-                 // console.log("BlueCount: " + blueFeed.length);
+                // stream.getBlueFeed( async function(bluedata) {
+                //   blueFeed = bluedata;
+                //  // console.log("BlueCount: " + blueFeed.length);
       
-                  // When the blue feed has returned to us, then get the Red Feed
-                  stream.getRedFeed( function(reddata) {
-                      redFeed = reddata;
+                //   // When the blue feed has returned to us, then get the Red Feed
+                //   stream.getRedFeed( function(reddata) {
+                //       redFeed = reddata;
 
-                      var wordCloud = findRecentTopics(bluedata,reddata);
-                      // console.log(res.json(wordCloud));
-                      res.json(wordCloud);  // returns an object with nested arrays for the wordcloud 
-                  });
-                });
+                //       var wordCloud = findRecentTopics(bluedata,reddata);
+                //       // console.log(res.json(wordCloud));
+                //       res.json(wordCloud);  // returns an object with nested arrays for the wordcloud 
+                //   });
+                // });
 
 
     });
@@ -123,74 +126,111 @@ module.exports = function(app) {
         var stream = new Stream(keyword);
         var blueFeed, redFeed;
 
-       
+       stream.getNYTimesFeed( async function(nytimesdata) {
+         if (nytimesdata){
+           if (nytimesdata.data) {
+             if (nytimesdata.data.response) {
+               if (nytimesdata.data.response.docs) {
+                NYTimesFeed = nytimesdata.data.response.docs;
+               }
+              
+             }
+            
+           }
+         }
+        
+         console.log('got NY feed. ');
+
+              
+                NYTimesFeed.forEach( (doc) =>
+                {
+                  console.log('NY Doc:');
+
+                  let imageURL = "";
+                  if (doc.multimedia && doc.multimedia[0]) {
+                    imageURL = doc.multimedia[0].url;
+                  }
+                  
+
+                  let newPost = {
+                    keyword: keyword,
+                    bias: "blue",
+                    text: doc.lead_paragraph,
+                    image: imageURL,
+                    url: doc.web_url,
+                    network_name: 'NYTimes',
+                  }
+                    db.Post.create(newPost);
+                });
+              
+       });
 
         // Get the Blue Feed from the stream
-        stream.getBlueFeed( async function(bluedata) {
-            blueFeed = bluedata;
-            console.log("BlueCount: " + blueFeed.length);
+        // stream.getBlueFeed( async function(bluedata) {
+        //     blueFeed = bluedata;
+        //     console.log("BlueFeed: ", blueFeed);
 
             // When the blue feed has returned to us, then get the Red Feed
-            stream.getRedFeed( function(reddata) {
-                redFeed = reddata;
-                console.log("RedCount: " + redFeed.length);
+            // stream.getRedFeed( function(reddata) {
+            //     redFeed = reddata;
+            //     console.log("RedCount: " + redFeed.length);
             
-                // Now that we have both the blue and the red feeds - we can store them 
-                // as posts in our DB
-                blueFeed.forEach( async function(postItem) {
+            //     // Now that we have both the blue and the red feeds - we can store them 
+            //     // as posts in our DB
+           // blueFeed.forEach( async function(postItem) {
 
-                    var newPost = {
-                        curator_id: postItem.id,
-                        keyword: keyword,
-                        bias: "blue",
-                        text: postItem.text,
-                        image: postItem.image,
-                        likes: postItem.likes,
-                        comments: postItem.comments,
-                        url: postItem.url,
-                        thumbnail: postItem.thumbnail,
-                        has_media: postItem.has_media,
-                        user_image: postItem.user_image,
-                        user_screen_name: postItem.user_screen_name,
-                        network_name: postItem.network_name,
-                        user_url: postItem.user_url
+            //         var newPost = {
+            //             curator_id: postItem.id,
+            //             keyword: keyword,
+            //             bias: "blue",
+            //             text: postItem.text,
+            //             image: postItem.image,
+            //             likes: postItem.likes,
+            //             comments: postItem.comments,
+            //             url: postItem.url,
+            //             thumbnail: postItem.thumbnail,
+            //             has_media: postItem.has_media,
+            //             user_image: postItem.user_image,
+            //             user_screen_name: postItem.user_screen_name,
+            //             network_name: postItem.network_name,
+            //             user_url: postItem.user_url
 
-                    };
+            //         };
 
-                   await db.Post.create(newPost);
+            //        await db.Post.create(newPost);
                    
           
-                 });
+            //      });
 
-                 redFeed.forEach( async function(postItem) {
+            //      redFeed.forEach( async function(postItem) {
 
-                    var newPost = {
-                        curator_id: postItem.id,
-                        keyword: keyword,
-                        bias: "red",
-                        text: postItem.text,
-                        image: postItem.image,
-                        likes: postItem.likes,
-                        comments: postItem.comments,
-                        url: postItem.url,
-                        thumbnail: postItem.thumbnail,
-                        has_media: postItem.has_media,
-                        user_image: postItem.user_image,
-                        user_screen_name: postItem.user_screen_name,
-                        network_name: postItem.network_name,
-                        user_url: postItem.user_url
+            //         var newPost = {
+            //             curator_id: postItem.id,
+            //             keyword: keyword,
+            //             bias: "red",
+            //             text: postItem.text,
+            //             image: postItem.image,
+            //             likes: postItem.likes,
+            //             comments: postItem.comments,
+            //             url: postItem.url,
+            //             thumbnail: postItem.thumbnail,
+            //             has_media: postItem.has_media,
+            //             user_image: postItem.user_image,
+            //             user_screen_name: postItem.user_screen_name,
+            //             network_name: postItem.network_name,
+            //             user_url: postItem.user_url
 
-                    };
+            //         };
 
-                   await db.Post.create(newPost);
+            //        await db.Post.create(newPost);
                    
           
-                 });
+            //      });
 
-                res.json( {});
+            //     res.json( {});
     
                
-            })
+         //    })
         })
        
 
@@ -200,6 +240,4 @@ module.exports = function(app) {
 
 
 
-    });
-};
-
+    }

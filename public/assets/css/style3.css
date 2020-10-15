@@ -1,0 +1,18 @@
+a {
+    color: goldenrod;
+}
+
+html {
+    font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:blue;
+}
+
+body {
+    width:100%;
+    box-sizing: border-box;
+    margin:auto;
+    background-color: blue;
+    height:100vh;
+    position: relative;
+}
+
