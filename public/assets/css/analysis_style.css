@@ -99,6 +99,10 @@
     padding:10px;
     font-size:.8em;
 }
+
+.cardTitle {
+    font-size:3em;
+}
 .feedContainer
 {
     background-color:blue;

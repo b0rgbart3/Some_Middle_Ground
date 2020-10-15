@@ -153,6 +153,7 @@ module.exports = function(app) {
                   let newPost = {
                     keyword: keyword,
                     bias: '',
+                    title: article.title,
                     text: article.description,
                     url: article.url,
                     network_name: source,
@@ -190,6 +191,7 @@ module.exports = function(app) {
                     let newPost = {
                       keyword: keyword,
                       bias: "blue",
+                      title: doc.title,
                       text: doc.lead_paragraph,
                       image: imageURL,
                       url: doc.web_url,

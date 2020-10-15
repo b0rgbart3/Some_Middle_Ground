@@ -11,6 +11,7 @@ module.exports = function(sequelize, DataTypes) {
       title: DataTypes.STRING,
       keyword: DataTypes.STRING,
       bias: DataTypes.STRING,
+      title: DataTypes.STRING,
       text: DataTypes.TEXT,
       image: DataTypes.STRING,
       likes: DataTypes.INTEGER,
