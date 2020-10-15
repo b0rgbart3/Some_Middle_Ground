@@ -32,16 +32,17 @@ function AnalyzeKeyword(keyword) {
         data: {keyword: keyword}
         }).then( function(dataReturned) {
 
-            console.log("Data returned: " + dataReturned);
+            console.log("Data returned: ", dataReturned);
             // We don't do anything with the dataReturned, which I think is odd...
 
             // Then reload the page on the /keyword_analysis route
-            if (dataReturned.error === "NO POSTS FOUND") {
+            if (dataReturned.dataFound === false) {
                 // window.location.replace("/");
                 $("#error").show();
             } else {
+                console.log("Success!");
                 $("#error").hide();
-            window.location.replace("/keyword_analysis" + "?keyword=" + keyword);
+                window.location.replace("/results" + "?keyword=" + keyword);
             }
         }
     ).catch( function(err) {

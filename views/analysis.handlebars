@@ -12,7 +12,7 @@
   </div>
 
   {{!-- fact check here --}}
-  <div class="list-container factCheck group googleBox">
+  {{!-- <div class="list-container factCheck group googleBox">
     <p class="factCheckHead">Google Fact Check Results</p>
 
        {{#each googleInfos}}
@@ -33,17 +33,26 @@
 
 
   </div>
-</div>
+</div> --}}
 
-
+{{!-- 
 <div class="outletStats">
 
   <a href="/stats" id="wordCloudLink">View Word Clouds</a>
 
 
 
-</div>
+</div> --}}
+
 <div class='feedContainer group'>
+    <div class='feed blueFeed group'>
+    <div class='stats'>News Posts: <span class='countNumber'>{{ postCount }}</span> posts</div>
+   
+    {{#each posts}}
+      {{> cards/card-block}}
+    {{/each}}
+  </div>
+{{!--   
   <div class='feed blueFeed group'>
     <div class='stats'>"Liberal" sources: <span class='countNumber'>{{ blueCount }}</span> posts</div>
    
@@ -57,5 +66,5 @@
     {{#each reds}}
       {{> cards/card-block}}
     {{/each}}
-  </div>
+  </div> --}}
 </div>

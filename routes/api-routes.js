@@ -120,42 +120,49 @@ module.exports = function(app) {
     
     app.post("/api/analyze_keyword", function(req, res) {
         var keyword = req.body.keyword;
-        console.log('keyword: ' + keyword);
+       // console.log('keyword: ' + keyword);
 
         // Create a new Curator Stream Object
         var stream = new Stream(keyword);
         var blueFeed, redFeed, NEWSOrgFeed;
+        let dataFound = false;
 
         stream.getNEWSorgFeed( async function(newsdotorgdata) {
-          console.log('got newsorg feed.');
+         // console.log('got newsorg feed.');
           if (newsdotorgdata) {
             if (newsdotorgdata.data) {
               if (newsdotorgdata.data.articles) {
                 NEWSOrgFeed = newsdotorgdata.data.articles;
-
+                dataFound = true;
                // console.log('NewsORgFeed: ', NEWSOrgFeed);
               }
             }
           }
 
               NEWSOrgFeed.forEach( (article) => {
-                console.log('NEWS Org Article:');
+             //   console.log('NEWS Org Article:');
                 let imageURL = "";
+                // ONly post articles that have images
                 if (article.urlToImage) {
                   imageURL = article.urlToImage;
+
+                  let source = '';
+                  if (article.source.name) {
+                    source = article.source.name;
+                  }
+                  let newPost = {
+                    keyword: keyword,
+                    bias: '',
+                    text: article.description,
+                    url: article.url,
+                    network_name: source,
+                    image: imageURL,
+                  }
+                  db.Post.create(newPost);
+
+
                 }
-                let source = '';
-                if (article.source.name) {
-                  source = article.source.name;
-                }
-                let newPost = {
-                  keyword: keyword,
-                  bias: '',
-                  text: article.description,
-                  url: article.url,
-                  network_name: source,
-                }
-                db.Post.create(newPost);
+               
               });
         })
 
@@ -165,7 +172,38 @@ module.exports = function(app) {
              if (nytimesdata.data.response) {
                if (nytimesdata.data.response.docs) {
                 NYTimesFeed = nytimesdata.data.response.docs;
-                
+                dataFound = true;
+
+                console.log('got NY feed. ');
+
+              
+                NYTimesFeed.forEach( (doc) =>
+                {
+                //  console.log('NY Doc:');
+
+
+                // only post articles that have images
+
+                  let imageURL = "";
+                  if (doc.multimedia && doc.multimedia[0]) {
+                    imageURL = "https://www.nytimes.com/" + doc.multimedia[0].url;
+                    let newPost = {
+                      keyword: keyword,
+                      bias: "blue",
+                      text: doc.lead_paragraph,
+                      image: imageURL,
+                      url: doc.web_url,
+                      network_name: 'NYTimes',
+                    }
+                      db.Post.create(newPost);
+                  }
+                  
+
+                 
+                });
+
+                res.json( { dataFound: dataFound});
+
                }
               
              }
@@ -173,31 +211,18 @@ module.exports = function(app) {
            }
          }
         
-         console.log('got NY feed. ');
 
-              
-                NYTimesFeed.forEach( (doc) =>
-                {
-                  console.log('NY Doc:');
-
-                  let imageURL = "";
-                  if (doc.multimedia && doc.multimedia[0]) {
-                    imageURL = doc.multimedia[0].url;
-                  }
-                  
-
-                  let newPost = {
-                    keyword: keyword,
-                    bias: "blue",
-                    text: doc.lead_paragraph,
-                    image: imageURL,
-                    url: doc.web_url,
-                    network_name: 'NYTimes',
-                  }
-                    db.Post.create(newPost);
-                });
               
        });
+   
+
+
+    
+               
+       //    })
+      })
+     
+
 
         // Get the Blue Feed from the stream
         // stream.getBlueFeed( async function(bluedata) {
@@ -260,13 +285,6 @@ module.exports = function(app) {
                    
           
             //      });
-
-            //     res.json( {});
-    
-               
-         //    })
-        })
-       
 
         
 
