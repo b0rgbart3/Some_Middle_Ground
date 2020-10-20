@@ -1,21 +1,16 @@
 # Middle|Ground
-![Travis Status](https://img.shields.io/travis/:seyouny/:MiddleGround)
-![License](https://img.shields.io/github/license/seyouny/MiddleGround)
-<hr>
 
 Middle|Ground aims to shine a light on the imbalanced and sometimes inaccurate news we receive through social media, and promote greater perspective and dialogue about issues of social importance.  Inspired by the Blue Feed Red Feed visual created by the Wall Street Journal in 2016, Middle|Ground v1 offers side-by-side comparison of social media streams from the top “liberal” and “conservative” news sources.  Users can search by topic of interest and see how these topics are represented on social media by the news sources deemed "most reliable" by people who identify their views on a spectrum from conservative to liberal.  In addtiion, Middle|Ground harnesses the Google Fact Check API to show any claims related to the topic which have been fact-checked and any conclusion reached on whether the claims are partly or mostly true or false.
 
+
+## Contents
+  1.   [Demo](#demo)  
+  2.    [Technology](#technology)   
+  3.    [Authors](#author)    
+  4.    [Contact](#contact)
+
 <hr>
 
-## Contents | Quick Links
-[Getting Started](#start)     |     [Demo](#demo)     |     [Built With](#built)     |     [Authors](#author)     |     [Visuals](#visuals)     |     [Contributing & Tests](Contributing.md)     |     [Contact](#contact)
-
-<hr>
-
-## [Getting Started](#start)
-
-### Download the app from Git Hub here:
-* [Repo URL](https://github.com/seyouny/MiddleGround)
 
 ### <a id="demo">View a demo:</a> 
 * [Deployed on Heroku](https://fast-cliffs-31437.herokuapp.com/)
@@ -27,7 +22,7 @@ Middle|Ground aims to shine a light on the imbalanced and sometimes inaccurate n
 
 <hr>
 
-## <a id="built">Built With</a>
+## <a id="technology">Technology</a>
 * HTML5 & CSS
 * [Javascript](https://www.javascript.com/)
 * [MySql](https://www.mysql.com/)
@@ -40,7 +35,8 @@ Middle|Ground aims to shine a light on the imbalanced and sometimes inaccurate n
 * [jQuery](https://jquery.com/)
 * [Axios](https://www.npmjs.com/package/axios)
 * [Heroku](https://www.heroku.com/)
-* [Curator\.io API](https://curator.io/)
+* [News.org API](https://www.news.org/)
+* [New York Times articles API](https://developer.nytimes.com/)
 * [Google Fact Check API](https://developers.google.com/fact-check/tools/api)
 
 <hr>
@@ -68,6 +64,7 @@ For questions or to discuss collaborations on this or other projects, contact th
 [linkedin.com/jenjayme](https://www.linkedin.com/in/jenjayme)<br>
 [github.com/jenjayme](https://github.com/JenJayme)
 
+![License](https://img.shields.io/github/license/seyouny/MiddleGround)
 
 ## Acknowledgements
 * Special thanks to Jerome Chenette, Berkeley Coding Boot Camp and Trilogy for referring this project.  
