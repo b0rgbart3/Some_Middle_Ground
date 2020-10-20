@@ -18,7 +18,9 @@ Middle|Ground aims to shine a light on the imbalanced and sometimes inaccurate n
 * [Repo URL](https://github.com/seyouny/MiddleGround)
 
 ### <a id="demo">View a demo:</a> 
-* [Deployed on Heroku](https://rocky-meadow-78317.herokuapp.com/#demo)
+* [Deployed on Heroku](https://fast-cliffs-31437.herokuapp.com/)
+
+<!-- https://rocky-meadow-78317.herokuapp.com/#demo) -->
 <hr>
 
 ![Example Gif](screengrab.jpg)
