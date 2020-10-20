@@ -2,8 +2,8 @@ const axios = require('axios');
 
 const API_Key = "7bdbfc4d-3586-4acc-a841-a018eb4c8cd9";
 const NYTIMES_API_KEY = process.env.NY_TIMES_API_KEY;
-const NEWSorg_endpt =  'http://newsapi.org/v2/top-headlines?' + 'country=us&' +'apiKey='+ process.env.NEWS_API_KEY;
-
+const NEWSorg_endpt =  'http://newsapi.org/v2/top-headlines?' + 'apiKey='+ process.env.NEWS_API_KEY;
+// 'country=us&' +
 
 const endptURL = "https://api.curator.io/v1/feeds/";
 
@@ -33,8 +33,8 @@ class Stream {
         else {
             this.keyword = "";
         }
-        this.blueFeed;
-        this.redFeed;
+       // this.blueFeed;
+      //  this.redFeed;
     }
 
     getRedFeed(cb) {
@@ -74,7 +74,7 @@ class Stream {
     }
 
     getNEWSorgFeed( cb ) {
-        let queryString = NEWSorg_endpt;
+        let queryString = NEWSorg_endpt +"&q="+ this.keyword;
         console.log("About to get the News.org feed, ", queryString);
         axios.get(queryString)
             .then( response => {
