@@ -138,7 +138,7 @@ module.exports = function(app) {
 
 
     // This is the ROOT ROUTE -- which loads the handlebars template: views/index.handlebars
-    app.get("/*", function(req, res) {
+    app.get("/", function(req, res) {
 
         res.render("index");
 

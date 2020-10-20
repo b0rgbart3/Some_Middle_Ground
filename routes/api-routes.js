@@ -127,6 +127,11 @@ module.exports = function(app) {
         var blueFeed, redFeed, NEWSOrgFeed;
         let dataFound = false;
 
+        let media = ["cnbc","yahoo entertainment","cbs news","variety", "npr", "eleven warriors", "cnn", "macrumors", "ars technica", "the hill", "cnet", "fox news", "politico", "daily beast", "nytimes", "new york times"];
+
+        let shortNames=["cnbc","yahoo","cbs","variety","npr",
+      "eleven_warriors", "cnn", "mac_rumors", "art_technica", "the_hill", "cnet", "fox_news", "politico", "daily_beast", "ny_times", "ny_times"];
+
         stream.getNEWSorgFeed( async function(newsdotorgdata) {
          // console.log('got newsorg feed.');
           if (newsdotorgdata) {
@@ -140,8 +145,9 @@ module.exports = function(app) {
           }
 
               NEWSOrgFeed.forEach( (article) => {
-             //   console.log('NEWS Org Article:');
+               console.log('NEWS Org Article:', article);
                 let imageURL = "";
+                let networkLogo = "";
                 // ONly post articles that have images
                 if (article.urlToImage) {
                   imageURL = article.urlToImage;
@@ -149,6 +155,19 @@ module.exports = function(app) {
                   let source = '';
                   if (article.source.name) {
                     source = article.source.name;
+
+                    indexOfSourceName = media.indexOf(source.trim().toLowerCase());
+                    console.log("Network Source: ", source);
+                    console.log("Index: ", indexOfSourceName);
+
+                    
+                    if (indexOfSourceName >= 0) {
+                      networkLogo= "assets/images/media_logos/"+shortNames[indexOfSourceName] + ".jpg";
+
+                    } else {
+                      networkLogo= "assets/images/media_logos/generic.jpg";
+                    }
+                    
                   }
                   let newPost = {
                     keyword: keyword,
@@ -157,6 +176,7 @@ module.exports = function(app) {
                     text: article.description,
                     url: article.url,
                     network_name: source,
+                    network_logo: networkLogo,
                     image: imageURL,
                   }
                   db.Post.create(newPost);

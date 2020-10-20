@@ -6,16 +6,18 @@ a {
 
 html {
     font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color:white;
+    background-color: rgb(115, 169, 227);
 }
 
 body {
     width:100%;
     box-sizing: border-box;
     margin:auto;
-    background-color: white;
+    background-color: rgb(115, 169, 227);
     height:100vh;
     position: relative;
+    background-image:url('../images/denim.jpg');
+    background-size:100% 100%;
 }
 
 
@@ -124,7 +126,7 @@ li.builtWithLI {
 }
 
 #aboutLink {
-    position: fixed;
+    position: relative;
     right: 5%;
     top: 3%;
     color: rgba(255, 255, 255, .7);
@@ -229,13 +231,13 @@ h2 {
 }
 
 .logo {
-    width:350px;
+    width:490px;
 }
 
 .tagline {
     font-style:italic;
     margin:0;
-    padding-bottom: 3%;
+    font-size:20px;
 }
 
 form {
@@ -250,11 +252,9 @@ form {
     box-sizing: border-box;
     color: whitesmoke;
     padding-top:100px;
-    background-color:#eeeeee;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/handshake.jpg");
-    background-size: 100%;
-    background-position: 50% 50%;
     box-sizing: border-box;
+
+    background-size:100%;
 }
 
 .jumbo h1 {
@@ -270,32 +270,42 @@ form {
 .div2 {
     padding-top:20px;
     text-align:center;
-    background-color:white;
     margin:0;
     height:400px;
 }
 
-.basicInput {
-    font-size:1.2em;
-    border-radius:4px;
-    border-color: rgb(97, 97, 97);
-    background-image: url(../images/searchicon.png);
+#keyword {
+    font-size:22px;
+    border-radius:24px;
     background-repeat: no-repeat;
     background-size: contain;
     padding:12px;
-    padding-left: 40px;
-    color: rgb(57, 57, 57);
     outline:none;
-    margin-top:18px;
+    border:none;
+    background-color:rgba(255, 255, 255, 0.62);
+    color:black;
+    text-align: center;
+
 }
-.basicInput:hover {
-    outline:2px solid rgb(104, 167, 250);
-    background-color: lightgray;
+#keyword:hover {
+    outline:none;
+    background-color:rgba(255, 255, 255, 1);
     background-image: none;
+    color:black;
+    user-select: none;
+    cursor: pointer;
 }
-.basicInput:active {
-    outline:2px solid rgb(104, 167, 250);
-    background-image: none;
+
+#keyword:active {
+    outline:none;
+    background-color:rgba(255, 255, 255, 1);
+    color:black;
+}
+
+#keyword:focus {
+    outline:none;
+    background-color:rgba(255, 255, 255, 1);
+    color:black;
 }
 
 footer {
@@ -303,10 +313,8 @@ footer {
     font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 12px;
     color: white;
-    background: rgba(60, 138, 221, 0.979);
     padding: 35px;
     box-sizing: border-box;
-    border-top-style: solid;
     position: fixed;
     bottom: 0px;
 }
@@ -373,15 +381,9 @@ footer {
     background-color: black;
 
 }
-.analysis .logo {
-    width:400px;
-}
+
 /* Styles for Larger screens */
 @media only screen and (min-width:700px) {
-
-    .logo {
-        width: 450px;
-    }
 
 
 }

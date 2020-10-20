@@ -16,6 +16,7 @@ const blueFeed1 =[];
 const redFeed = [];
 var queryString;
 
+
 // This is our own Stream Class -- which we will use to
 // get the Curator Stream and filter it down so that it matches
 // the keyword that the user is searching for.
@@ -77,7 +78,7 @@ class Stream {
         console.log("About to get the News.org feed, ", queryString);
         axios.get(queryString)
             .then( response => {
-             //  console.log( "Got a response back from the NYTIMES ");
+              // console.log( "Got a response back from the NewsOrg: ", response);
                cb(response);
             })
     }
@@ -87,7 +88,7 @@ class Stream {
         console.log("About to get the NY Times feed, ", queryString);
         axios.get(queryString)
             .then( response => {
-             //  console.log( "Got a response back from the NYTIMES ");
+              //  console.log( "Got a response back from the NYTIMES: ", response);
                cb(response);
             })
     }

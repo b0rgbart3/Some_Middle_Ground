@@ -20,18 +20,19 @@ app.use(compression());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+require("./routes/html-routes")(app);
+require("./routes/api-routes")(app);
 // static directory 
 // Note:  This is necessary to be able to load in CSS and JS files into
 // the handlebars templates
 app.use(express.static("public"));
-
+app.use("/public", express.static(__dirname + '/public'));
 
 // requiring routes .. 
 // require("./** folder name ** / ** file name ** )(app); // facebook
 // require("./** folder name ** / ** file name ** )(app); // google
 // require("./** folder name ** / ** files name **)(app); // twitter
-require("./routes/html-routes")(app);
-require("./routes/api-routes")(app);
+
 
 // syncing the sequelize models and then starting the express app
 db.sequelize.sync({ force: true }).then(function() {

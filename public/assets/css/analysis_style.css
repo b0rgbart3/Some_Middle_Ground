@@ -19,23 +19,27 @@ overflow: hidden;
     background-color:white;
     height:450px;
     position: relative;
-    margin:4px;
+    margin:10px;
+    margin-bottom:20px;
+    margin-top:18px;
     box-shadow:0 0 8px rgb(20, 36, 50);
+    box-sizing: border-box;
 }
 
 .cardImageDiv {
     width:100%;
     background-color:white;
     box-sizing: border-box;
-    max-height:200px;
+    height:190px;
     overflow: hidden;
     position: relative;
 }
 .cardImage {
-    width:102%;
+    width:108%;
     position: relative;
     left:-2px;
     top:-2px;
+    min-height:100%;
 
 }
 
@@ -81,20 +85,22 @@ overflow: hidden;
 
 /* This is the news source logo such as CNN or FoxNews */
 .userImage {
-    width:60px;
     height:60px;
+    max-width:120px;
     float:left;
     display:inline-block;
 }
 .source {
-    height:60px;
+
     background-color:#dddddd;
-    text-transform: capitalize;
     font-weight: bold;
     box-sizing: border-box;
     position: absolute;
     bottom:0;
+    height:60px;
+    overflow: hidden;
     width:100%;
+    border-top:2px solid gray;
 
 }
 .source p {
@@ -102,7 +108,11 @@ overflow: hidden;
     padding-left:80px;
 }
 .cardTextDiv {
-
+    
+    padding-top:15px;
+    padding-left:10px;
+    padding-right:8px;
+    margin-top:0;
   
 }
 .cardText {

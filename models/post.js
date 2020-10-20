@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
       bias: DataTypes.STRING,
       title: DataTypes.STRING,
       text: DataTypes.TEXT,
-      image: DataTypes.STRING,
+      image: DataTypes.TEXT,
       likes: DataTypes.INTEGER,
       comments: DataTypes.INTEGER,
       url: DataTypes.TEXT,
@@ -22,6 +22,7 @@ module.exports = function(sequelize, DataTypes) {
       user_image: DataTypes.STRING,
       user_screen_name: DataTypes.STRING,
       network_name: DataTypes.STRING,
+      network_logo: DataTypes.STRING, 
       user_url: DataTypes.STRING,
     });
     return Post;

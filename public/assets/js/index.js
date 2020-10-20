@@ -5,9 +5,10 @@ $(document).ready(function() {
     var accountNameSubmit = $("#accountName");
     var keywordInput = $("input#keyword");
     var keywordSubmit = $("#submitKeyword")
+    var keywordForm = $("#keywordForm");
 
     // Keyword submit button
-    keywordSubmit.on('click', function(event) {
+    keywordForm.on('submit', function(event) {
         event.preventDefault();
         var keyword = keywordInput.val().trim();
         if (!keyword) {
