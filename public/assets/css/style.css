@@ -20,6 +20,7 @@ body {
     position: relative;
     background-image:url('../images/denim.jpg');
     background-size:100% 100%;
+    background-repeat: repeat-y;
     margin:0;
     padding:0;
 }
@@ -39,13 +40,7 @@ body {
     text-justify: distribute;
 }
 
-.aboutSubhead {
-    font-size: 1.35em;
-    font-weight: bold;
-    font-style: italic;
-    margin: 1% 10%;
-    color: rgb(216, 163, 27);
-}
+
 
 
 #blue_canvas {
@@ -107,6 +102,7 @@ li.builtWithLI {
 
 #aboutProject {
     padding-bottom: 20px;
+    color:white;
 }
 
 #acknowledgements {
@@ -268,7 +264,7 @@ form {
     color: whitesmoke;
     padding-top:100px;
     box-sizing: border-box;
-
+    
  
 }
 
@@ -384,10 +380,13 @@ footer {
 
 .analysis {
     text-align:center;
+    position: relative;
     background-image:url('../images/denim.jpg');
     background-size:100%;
+    background-repeat: repeat-y;
     margin:0;
     padding:0;
+
 }
 
 /* Styles for Larger screens */

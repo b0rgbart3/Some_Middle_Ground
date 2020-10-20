@@ -367,12 +367,9 @@ footer {
 
 .analysis {
     text-align:center;
-    background-color: black;
 
 }
-.analysis .logo {
-    width:400px;
-}
+
 /* Styles for Larger screens */
 @media only screen and (min-width:700px) {
 

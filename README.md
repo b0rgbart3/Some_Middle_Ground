@@ -21,9 +21,7 @@ Middle|Ground aims to shine a light on the imbalanced and sometimes inaccurate n
 * [Deployed on Heroku](https://rocky-meadow-78317.herokuapp.com/#demo)
 <hr>
 
-## [Visuals](#visuals)
-
-![Example Gif](public/assets/images/example.gif)
+![Example Gif](screengrab.jpg)
 
 <hr>
 
