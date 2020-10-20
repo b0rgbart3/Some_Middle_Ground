@@ -1,4 +1,4 @@
-    <div class='card'>
+    <a href='{{ dataValues.url }}' target="_blank"><div class='card'>
         <div class='cardImageDiv'>
           <img src='{{ dataValues.image }}' class='cardImage'>
         </div>
@@ -8,5 +8,5 @@
       </div>
       <div class='source'><img src={{ dataValues.network_logo }} class='userImage'>
      
-      <p> {{ dataValues.network_logo }} {{ dataValues.network_name }}</p></div>
-    </div>
+      <p>{{ dataValues.network_name }}</p></div>
+    </div></a>
