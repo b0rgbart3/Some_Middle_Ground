@@ -23,7 +23,9 @@ module.exports = function(sequelize, DataTypes) {
       user_screen_name: DataTypes.STRING,
       network_name: DataTypes.STRING,
       network_logo: DataTypes.STRING, 
+      pub_date: DataTypes.STRING,
       user_url: DataTypes.STRING,
+
     });
     return Post;
   };

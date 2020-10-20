@@ -235,14 +235,26 @@ h2 {
 
 .logo {
     width:490px;
+    opacity:.8;
 }
 
+.logo:hover {
+    opacity:1;
+}
 .tagline {
     font-style:italic;
     margin:0;
     font-size:20px;
 }
 
+#tryagain {
+    font-size:28px;
+    color:white;
+    text-decoration: none;
+}
+#errorMsg {
+    color:white;
+}
 form {
     margin:0;
 }

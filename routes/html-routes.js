@@ -56,7 +56,7 @@ module.exports = function(app) {
                   // Call the Handlebar Template to display the data
                   res.render("analysis", hbsObject);
                 } else {
-                  res.render("error", {error: "NO POSTS FOUND"});
+                  res.render("error", {error: "No news posts were found for: "+keyword});
                 }
 
 

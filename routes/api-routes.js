@@ -178,6 +178,7 @@ module.exports = function(app) {
                     network_name: source,
                     network_logo: networkLogo,
                     image: imageURL,
+                    pub_date: article.publishedAt,
                   }
                   db.Post.create(newPost);
 
@@ -195,7 +196,7 @@ module.exports = function(app) {
                 NYTimesFeed = nytimesdata.data.response.docs;
                 dataFound = true;
 
-                console.log('got NY feed. ');
+                console.log('got NY feed: ', NYTimesFeed);
 
               
                 NYTimesFeed.forEach( (doc) =>
@@ -206,16 +207,23 @@ module.exports = function(app) {
                 // only post articles that have images
 
                   let imageURL = "";
+                  let headline = keyword;
+                  networkLogo= "assets/images/media_logos/nytimes.jpg";
+                  if (doc.headline && doc.headline.main) {
+                    headline = doc.headline.main;
+                  }
                   if (doc.multimedia && doc.multimedia[0]) {
                     imageURL = "https://www.nytimes.com/" + doc.multimedia[0].url;
                     let newPost = {
                       keyword: keyword,
                       bias: "blue",
-                      title: doc.title,
+                      title: headline,
                       text: doc.lead_paragraph,
                       image: imageURL,
                       url: doc.web_url,
                       network_name: 'NYTimes',
+                      network_logo: networkLogo,
+                      pub_date: doc.pub_date,
                     }
                       db.Post.create(newPost);
                   }
