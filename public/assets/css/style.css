@@ -82,7 +82,6 @@ body {
     position: fixed;
     left: 60%;
 }
->>>>>>> bartsBranch
 
 ul.builtWithUL {
     margin-top: 10px;
@@ -254,12 +253,9 @@ form {
     padding-top:100px;
     box-sizing: border-box;
 
-    background-size:100%;
+ 
 }
 
-.jumbo h1 {
-    margin:0;
-}
 .div1 {
     text-align:center;
     background-color:#eeeeee;
@@ -349,12 +345,6 @@ footer {
     text-decoration: none;
 }
 
-.topic {
-    background-color: whitesmoke;
-    font-size: .8em;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.5)
-}
 
 .accountNameSubmit {
     background-color:rgb(62, 118, 238);
@@ -378,8 +368,8 @@ footer {
 
 .analysis {
     text-align:center;
-    background-color: black;
-
+    background-image:url('../images/denim.jpg');
+    background-size:100%;
 }
 
 /* Styles for Larger screens */
@@ -387,4 +377,5 @@ footer {
 
 
 }
+
 

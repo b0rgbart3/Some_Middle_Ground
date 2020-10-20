@@ -15,7 +15,7 @@ $(document).ready(function() {
             return;
         }
         AnalyzeKeyword(keyword);
-        keywordInput.val("");
+       // keywordInput.val("");
     })
         
 });
