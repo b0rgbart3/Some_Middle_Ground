@@ -30,6 +30,9 @@ module.exports = function(app) {
       // console.log("Request.params: " + JSON.stringify(req.query) );
         var keyword = req.query.keyword;
         var bluePosts = [];
+        var conservatives = ["brightbart news", "fox news", "fox", "usa today", "the hill" ];
+        var liberals = ["ny times", "nytimes", "cnbc", "washington post", "politico", "npr"];
+
 
         console.log("Pulling from the database:");
         db.Post.findAll({
@@ -38,6 +41,19 @@ module.exports = function(app) {
                 }
               }).then(function(posts) {
                 console.log("Got " + posts.length + " posts.");
+
+                
+                posts.forEach( (post) => {
+                  post.dataValues.bent = "undefined";
+
+                  if (conservatives.indexOf( post.network_name.toLowerCase()) >= 0) {
+                    post.dataValues.bent = "red";
+                  }
+                  if (liberals.indexOf( post.network_name.toLowerCase()) >= 0) {
+                    post.dataValues.bent = "blue";
+                  }
+                });
+                console.log(posts);
 
                 // Build the HandleBars Object to display the data
                 var hbsObject = {
