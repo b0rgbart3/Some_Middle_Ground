@@ -145,7 +145,7 @@ module.exports = function(app) {
           }
 
               NEWSOrgFeed.forEach( (article) => {
-               console.log('NEWS Org Article:', article);
+           //    console.log('NEWS Org Article:', article);
                 let imageURL = "";
                 let networkLogo = "";
                 // ONly post articles that have images
@@ -157,8 +157,8 @@ module.exports = function(app) {
                     source = article.source.name;
 
                     indexOfSourceName = media.indexOf(source.trim().toLowerCase());
-                    console.log("Network Source: ", source);
-                    console.log("Index: ", indexOfSourceName);
+               //     console.log("Network Source: ", source);
+                //    console.log("Index: ", indexOfSourceName);
 
                     
                     if (indexOfSourceName >= 0) {
@@ -196,7 +196,7 @@ module.exports = function(app) {
                 NYTimesFeed = nytimesdata.data.response.docs;
                 dataFound = true;
 
-                console.log('got NY feed: ', NYTimesFeed);
+              //  console.log('got NY feed: ', NYTimesFeed);
 
               
                 NYTimesFeed.forEach( (doc) =>

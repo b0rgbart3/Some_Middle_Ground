@@ -31,6 +31,7 @@ module.exports = function(app) {
         var keyword = req.query.keyword;
         var bluePosts = [];
 
+        console.log("Pulling from the database:");
         db.Post.findAll({
           where: {
                   keyword: keyword
